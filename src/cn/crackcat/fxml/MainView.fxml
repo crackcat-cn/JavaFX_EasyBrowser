@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.crackcat.controller.MainViewController">
+    <children>
+        <Button fx:id="goButton" layoutX="548.0" layoutY="20.0" mnemonicParsing="false" onAction="#goUrl" text="跳转"/>
+        <Button fx:id="reButton" layoutX="602.0" layoutY="20.0" mnemonicParsing="false" onAction="#reUrl" text="刷新"/>
+        <Button fx:id="preButton" disable="true" layoutX="649.0" layoutY="20.0" mnemonicParsing="false"
+                onAction="#preUrl" text="后退"/>
+        <Button fx:id="prepreButton" disable="true" layoutX="697.0" layoutY="20.0" mnemonicParsing="false"
+                onAction="#prepreUrl" text="前进"/>
+        <Button fx:id="homeButton" layoutX="746.0" layoutY="20.0" mnemonicParsing="false" onAction="#goHome" text="主页"
+                AnchorPane.rightAnchor="14.0"/>
+        <WebView fx:id="webView" layoutX="2.0" layoutY="54.0" prefHeight="540.0" prefWidth="800.0"
+                 AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                 AnchorPane.topAnchor="60.0"/>
+        <TextField fx:id="urlText" onKeyPressed="#key_Enter" layoutX="140.0" layoutY="20.0" prefHeight="25.0"
+                   prefWidth="400.0"/>
+
+
+        <MenuBar layoutY="20.0" prefWidth="140.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="功能">
+                    <items>
+                        <MenuItem fx:id="markItem" onAction="#Mark" mnemonicParsing="false" text="收藏夹"/>
+                        <MenuItem fx:id="historyItem" onAction="#History" mnemonicParsing="false" text="历史记录"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="设置">
+                    <items>
+                        <MenuItem fx:id="setItem" onAction="#Set" mnemonicParsing="false" text="主要设置"/>
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="帮助">
+                    <items>
+                        <MenuItem fx:id="helpItem" onAction="#Help" mnemonicParsing="false" text="使用说明"/>
+                        <MenuItem fx:id="updateItem" onAction="#Update" mnemonicParsing="false" text="检查更新"/>
+                        <MenuItem fx:id="feedbackItem" onAction="#Feedback" mnemonicParsing="false" text="反馈意见"/>
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <Button fx:id="listenerButton" disable="true"/>
+    </children>
+</AnchorPane>
